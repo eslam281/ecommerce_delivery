@@ -10,7 +10,6 @@ import '../../core/services/services.dart';
 
 abstract class ArchiveController extends GetxController{
   getData();
-  String printOrderType(int val);
   String printPaymentMethod(int val);
 }
 class ArchiveControllerImp extends ArchiveController{
@@ -44,10 +43,6 @@ class ArchiveControllerImp extends ArchiveController{
       }
     }
     update();
-  }
-  @override
-  String printOrderType(int val) {
-    return (val == 0)? "delivery": "Recive";
   }
 
   @override

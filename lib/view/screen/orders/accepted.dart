@@ -2,6 +2,7 @@
 import 'package:delivery/controller/orders/accepted_controller.dart';
 import 'package:delivery/controller/orders/pending_controller.dart';
 import 'package:delivery/core/class/handlingdataview.dart';
+import 'package:delivery/view/widget/orders/orderslistcardaccepted.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,7 @@ class OrdersAccepted extends StatelessWidget {
                     itemBuilder: ((context, index) {
                       return Column(
                         children: [
-                          CardOrdersList(listdata: controller.data[index]),
+                          CardOrdersListAccepted(listdata: controller.data[index]),
                           const SizedBox(height: 20,)
                         ],
                       );

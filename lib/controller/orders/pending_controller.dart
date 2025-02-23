@@ -10,7 +10,6 @@ import '../../core/services/services.dart';
 
 abstract class PendingController extends GetxController{
   getData();
-  String printOrderType(int val);
   String printPaymentMethod(int val);
 }
 class PendingControllerImp extends PendingController{
@@ -61,18 +60,9 @@ class PendingControllerImp extends PendingController{
   }
 
   @override
-  String printOrderType(int val) {
-    return (val == 0)? "delivery": "Recive";
-  }
-
-  @override
   String printPaymentMethod(int val) {
     return (val == 0)? "Cash On Delivery": "Payment Card";
 
-  }
-
-  refreshOrder(){
-    getData();
   }
 
 }

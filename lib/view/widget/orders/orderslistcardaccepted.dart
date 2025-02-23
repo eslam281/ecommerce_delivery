@@ -1,3 +1,4 @@
+import 'package:delivery/controller/orders/accepted_controller.dart';
 import 'package:delivery/controller/orders/pending_controller.dart';
 import 'package:delivery/core/constant/color.dart';
 import 'package:delivery/core/constant/routes.dart';
@@ -7,13 +8,13 @@ import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
 
 
-class CardOrdersList extends GetView<PendingControllerImp> {
+class CardOrdersListAccepted extends GetView<AcceptedControllerImp> {
   final OrdersModel listdata;
-  const CardOrdersList({super.key, required this.listdata}) ;
+  const CardOrdersListAccepted({super.key, required this.listdata}) ;
 
   @override
   Widget build(BuildContext context) {
-    Get.put(PendingControllerImp());
+    Get.put(AcceptedControllerImp());
     return Card(
       child: Container(
           padding: const EdgeInsets.all(10),
@@ -44,27 +45,27 @@ class CardOrdersList extends GetView<PendingControllerImp> {
               const Divider(),
 
               Row(children: [
-                  Text("Total Price : ${listdata.ordersTotalprice} \$ ",
-                      style: const TextStyle(color: AppColor.primaryColor, fontWeight: FontWeight.bold,
-                      fontFamily:"sans")),
-                  const Spacer(),
+                Text("Total Price : ${listdata.ordersTotalprice} \$ ",
+                    style: const TextStyle(color: AppColor.primaryColor, fontWeight: FontWeight.bold,
+                        fontFamily:"sans")),
+                const Spacer(),
 
+                MaterialButton(onPressed: () {
+                  Get.toNamed(AppRoute.ordersdetails,arguments:{"ordersmodel":listdata});
+                },
+                  color: AppColor.primaryColor, textColor: AppColor.black,
+                  child: const Text("Details"),),
+
+                const SizedBox(width: 10,),
+
+                if(listdata.ordersStatus == 3)
                   MaterialButton(onPressed: () {
-                      Get.toNamed(AppRoute.ordersdetails,arguments:{"ordersmodel":listdata});
-                    },
-                    color: AppColor.primaryColor, textColor: AppColor.black,
-                    child: const Text("Details"),),
-
-                  const SizedBox(width: 10,),
-
-                  if(listdata.ordersStatus == 2)
-                  MaterialButton(onPressed: () {
-                    controller.approve(listdata.ordersUsersid.toString(), listdata.ordersId.toString());
+                    controller.doneDelivery(listdata.ordersUsersid.toString(), listdata.ordersId.toString());
                   },
                     color: AppColor.primaryColor, textColor: AppColor.black,
-                    child: const Text("Approve"),
+                    child: const Text("Done"),
                   ),
-                ]
+              ]
               ),
             ],
           )),
