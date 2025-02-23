@@ -44,6 +44,21 @@ class PendingControllerImp extends PendingController{
     }
     update();
   }
+  approve(String userid,String orderid)async{
+    data.clear();
+    statusRequest =StatusRequest.loading;
+    var response =await pendingData.approveOrders(orderid,userid,
+        myServices.sharedPreferences.getString("id")!);
+    statusRequest =handlingData(response);
+    if(statusRequest == StatusRequest.success){
+      if(response['status']=="success"){
+        getData();
+      }else{
+        statusRequest = StatusRequest.failure;
+      }
+    }
+    update();
+  }
 
   @override
   String printOrderType(int val) {

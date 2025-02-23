@@ -36,7 +36,6 @@ class CardOrdersList extends GetView<PendingControllerImp> {
               ),
               const Divider(),
 
-              Text("Order Type : ${controller.printOrderType(listdata.ordersType!)}"),
               Text("Order Price : ${listdata.ordersPrice} \$"),
               Text("Coupon Discount :  ${listdata.couponDiscount??0} %"),
               Text("Delivery Price : ${listdata.ordersPricedelivery} \$ "),
@@ -56,13 +55,15 @@ class CardOrdersList extends GetView<PendingControllerImp> {
                     },
                     color: AppColor.primaryColor, textColor: AppColor.black,
                     child: const Text("Details"),),
-                  SizedBox(width: 10,),
+
+                  const SizedBox(width: 10,),
+
                   if(listdata.ordersStatus == 2)
                   MaterialButton(onPressed: () {
-                    Get.toNamed(AppRoute.ordersdetails,arguments:{"ordersmodel":listdata});
+                    controller.approve(listdata.ordersUsersid.toString(), listdata.ordersId.toString());
                   },
                     color: AppColor.primaryColor, textColor: AppColor.black,
-                    child: const Text("Details"),
+                    child: const Text("Approve"),
                   ),
 
                 ],

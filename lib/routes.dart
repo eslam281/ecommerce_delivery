@@ -8,6 +8,7 @@ import 'package:delivery/view/screen/home/home.dart';
 import 'package:delivery/view/screen/home/homescreen.dart';
 import 'package:delivery/view/screen/initialstart/language.dart';
 import 'package:delivery/view/screen/initialstart/onboarding.dart';
+import 'package:delivery/view/screen/orders/details.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'core/constant/routes.dart';
 import 'core/middleware/mymiddleware.dart';
@@ -35,4 +36,7 @@ List<GetPage<dynamic>>? routes=[
   // Home
   GetPage(name: AppRoute.home, page: ()=> const HomeScreen()),
   GetPage(name: AppRoute.homepage, page: ()=> const Home()),
+
+  GetPage(name: AppRoute.ordersdetails, page: ()=> const OrdersDetails()),
+
 ];
