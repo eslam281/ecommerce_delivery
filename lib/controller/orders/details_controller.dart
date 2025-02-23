@@ -1,10 +1,11 @@
 
+import 'package:delivery/core/class/statusrequest.dart';
 import 'package:delivery/data/datasource/remote/orders/details_data.dart';
 import 'package:delivery/data/model/cartmodel.dart';
 import 'package:delivery/data/model/ordersmodel.dart';
 import 'package:get/get.dart';
 
-import '../../core/class/statusrequest.dart';
+
 import '../../core/functions/handlingdata.dart';
 
 
