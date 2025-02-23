@@ -40,14 +40,9 @@ class Settings extends StatelessWidget {
                   trailing:const Icon(Icons.person_2_outlined),onTap:(){
 
               }),
-            const Divider(),
 
-             ListTile(title:const Text("Address"),
-                trailing:const Icon(Icons.location_on_outlined),onTap:(){
-               Get.toNamed(AppRoute.addressView);
-             }),
-               const Divider(),
-               
+              const Divider(),
+
                ListTile(title:const Text("About us"),
                   trailing:const Icon(Icons.help_outline_rounded),onTap:(){}),
 
