@@ -11,7 +11,6 @@ import '../../widget/auth/customtextbodyauth.dart';
 import '../../widget/auth/customtextformauth.dart';
 import '../../widget/auth/customtexttittleauth.dart';
 import '../../widget/auth/logoauth.dart';
-import '../../widget/auth/textsignup.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -67,19 +66,30 @@ class Login extends StatelessWidget {
                               valid: (val) {
                                 return validInput(val, 5, 30, "email");
                               }),
-                          CustomTextFormAuth(
-                              obscureText: controller.isshowpassword,
-                              onTap: () {
-                                controller.showPassword();
+                          Container(
+                            margin:const EdgeInsets.all(2),
+                            child: CustomTextFormAuth(
+                                obscureText: controller.isshowpassword,
+                                onTap: () {
+                                  controller.showPassword();
+                                },
+                                type: TextInputType.text,
+                                mycontroller: controller.password,
+                                label: "13".tr,
+                                hintText: "19".tr,
+                                suffixIcon: const Icon(Icons.lock_outline),
+                                valid: (val) {
+                                  return validInput(val, 6, 30, "password");
+                                }),
+                          ),
+                          CustomButtomAuth(
+                              onPressed: () {
+                                controller.login();
                               },
-                              type: TextInputType.text,
-                              mycontroller: controller.password,
-                              label: "13".tr,
-                              hintText: "19".tr,
-                              suffixIcon: const Icon(Icons.lock_outline),
-                              valid: (val) {
-                                return validInput(val, 6, 30, "password");
-                              }),
+                              text: "15".tr),
+                          const SizedBox(
+                            height: 30,
+                          ),
                           InkWell(
                             onTap: () {
                               controller.goToForgetPassword();
@@ -94,20 +104,7 @@ class Login extends StatelessWidget {
                                   ?.copyWith(fontSize: 17),
                             ),
                           ),
-                          CustomButtomAuth(
-                              onPressed: () {
-                                controller.login();
-                              },
-                              text: "15".tr),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          CustomTextSing(
-                              text: "16".tr,
-                              textTwo: "17".tr,
-                              onTap: () {
-                                controller.goToSignUp();
-                              })
+
                         ],
                       ),
                     ),

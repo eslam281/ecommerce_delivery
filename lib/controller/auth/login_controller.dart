@@ -13,7 +13,6 @@ import '../../data/datasource/remote/auth/login_data.dart';
 abstract class LoginController extends GetxController{
   login();
   showPassword();
-  goToSignUp();
   goToForgetPassword();
 }
 class LoginControllerImp extends LoginController{
@@ -86,11 +85,6 @@ class LoginControllerImp extends LoginController{
   showPassword(){
     isshowpassword=isshowpassword?false:true;
     update();
-  }
-
-  @override
-  goToSignUp() {
-    Get.offNamed(AppRoute.signUp);
   }
 
   @override

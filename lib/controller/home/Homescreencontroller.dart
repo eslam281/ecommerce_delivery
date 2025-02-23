@@ -17,9 +17,11 @@ class HomeScreenControllerImp extends HomeScreenController {
   List<Widget> listpage = [
     const Home(),
     const Settings(),
+    const Settings(),
   ];
   List<Map> bottomappbat = [
-    {"title": "home", "icon": Icons.home},
+    {"title": "pending", "icon": Icons.padding_rounded},
+    {"title": "settings", "icon": Icons.archive},
     {"title": "settings", "icon": Icons.settings},
   ];
 

@@ -1,7 +1,8 @@
 
+import 'package:delivery/core/class/statusrequest.dart';
 import 'package:get/get.dart';
 
-import '../core/class/statusrequest.dart';
+
 import '../core/functions/handlingdata.dart';
 import '../data/datasource/remote/test_data.dart';
 

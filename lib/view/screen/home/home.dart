@@ -16,8 +16,11 @@ class Home extends StatelessWidget {
 
     return GetBuilder<HomeControllerImp>(
         builder: (controller) {
-          return  Container(margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
-              child:const Text("data")
+          return  Scaffold(
+            appBar:AppBar(title:const Text("Orders"),),
+              body: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+              child:const Text("data")),
             );
         }
       );

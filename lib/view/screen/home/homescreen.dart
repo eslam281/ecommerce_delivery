@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 
 import '../../../controller/home/Homescreencontroller.dart';
-import '../../../core/constant/routes.dart';
 import '../../../core/functions/alertexitapp.dart';
 import '../../widget/home/custombottomappbarhome.dart';
 
