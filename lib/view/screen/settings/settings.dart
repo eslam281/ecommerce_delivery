@@ -6,7 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../controller/home/settings_controller.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/constant/imageasset.dart';
-import '../../../core/constant/routes.dart';
 
 
 class Settings extends StatelessWidget {
